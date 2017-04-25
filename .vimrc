@@ -74,6 +74,11 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#save_state()
 endif
 
+"plugin parameters
+let g:vimfiler_as_default_explorer = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 if dein#check_install()
     call dein#install()
 endif
