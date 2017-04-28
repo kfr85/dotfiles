@@ -15,6 +15,10 @@ set hidden
 set number
 set ruler
 set cursorline
+set statusline+=%w
+set statusline+=%=
+set statusline+=[ENC=%{&fileencoding}]
+set statusline+=[LOW=%l/%L]
 set laststatus=2
 set showmatch
 set matchtime=3
