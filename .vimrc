@@ -72,6 +72,8 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/vimfiler.vim')
   
+  call dein#add('fatih/vim-go')
+  
   call dein#add('nathanaelkane/vim-indent-guides')  
   
   call dein#end()
