@@ -29,3 +29,7 @@ export PATH=$PATH:$GOROOT/bin
 #color
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxfxegedabagaced
+
+alias la='ls -a --color'
+alias ll='ls -l --color'
+
