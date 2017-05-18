@@ -32,4 +32,4 @@ export LSCOLORS=GxFxCxDxfxegedabagaced
 
 alias la='ls -a --color'
 alias ll='ls -l --color'
-
+alias vf='vim -c VimFilerExplorer'
