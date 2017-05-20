@@ -74,7 +74,6 @@ if dein#load_state(expand('~/.vim/dein'))
   
   call dein#add('fatih/vim-go')
   call dein#add('ekalinin/Dockerfile.vim', {'build': 'make'})
-  call dein#add('yuratomo/w3m.vim')
   
   call dein#add('nathanaelkane/vim-indent-guides')  
   
