@@ -82,6 +82,8 @@ if dein#load_state(expand('~/.vim/dein'))
 endif
 
 "plugin parameters
+let g:molokai_original = 1
+let g:rehash256 = 1
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
 let g:indent_guides_start_level = 2
@@ -92,6 +94,7 @@ if dein#check_install()
 endif
 
 "colorscheme
+set t_Co=256
 colorscheme molokai
 syntax on
 
