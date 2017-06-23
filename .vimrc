@@ -14,6 +14,7 @@ set hidden
 "visuals
 set number
 set ruler
+set nowrap
 set cursorline
 set statusline+=%w
 set statusline+=%=
