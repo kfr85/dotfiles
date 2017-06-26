@@ -16,6 +16,7 @@ set number
 set ruler
 set nowrap
 set cursorline
+set laststatus=2
 set showmatch
 set matchtime=3
 set wildmode=list:longest
