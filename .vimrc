@@ -16,10 +16,10 @@ set number
 set ruler
 set nowrap
 set cursorline
-set statusline+=%w
-set statusline+=%=
-set statusline+=[ENC=%{&fileencoding}]
-set statusline+=[LOW=%l/%L]
+"set statusline+=%w
+"set statusline+=%=
+"set statusline+=[ENC=%{&fileencoding}]
+"set statusline+=[LOW=%l/%L]
 set laststatus=2
 set showmatch
 set matchtime=3
@@ -91,6 +91,12 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+let g:airline_left_sep = '>'
+let g:airline_right_sep = '<'
+let g:airline_detect_modified = 1
+let g:airline_theme = 'molokai'
+let g:airline_powerline_fonts = 1
+let g:airline_symbols_ascii = 1
 
 if dein#check_install()
     call dein#install()
