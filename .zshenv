@@ -33,3 +33,10 @@ export LSCOLORS=GxFxCxDxfxegedabagaced
 alias la='ls -a --color'
 alias ll='ls -l --color'
 alias vf='vim -c VimFilerExplorer'
+
+if [ ! -d ~/.vim/dein/repos/github.com/Shougo/dein.vim ]
+then
+    mkdir ~/.vim/dein/repos/github.com/Shougo/dein.vim
+    git clone https://github.com/Shougo/dein.vim.git \
+    ~/.vim/dein/repos/github.com/Shougo/dein.vim
+fi
