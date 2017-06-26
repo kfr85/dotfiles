@@ -73,7 +73,9 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('ekalinin/Dockerfile.vim', {'build': 'make'})
   
   call dein#add('nathanaelkane/vim-indent-guides')  
+  
   call dein#add('itchyny/lightline.vim')
+  call dein#add('tpope/vim-fugitive')
   
   call dein#end()
   call dein#save_state()
