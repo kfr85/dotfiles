@@ -16,11 +16,6 @@ set number
 set ruler
 set nowrap
 set cursorline
-"set statusline+=%w
-"set statusline+=%=
-"set statusline+=[ENC=%{&fileencoding}]
-"set statusline+=[LOW=%l/%L]
-set laststatus=2
 set showmatch
 set matchtime=3
 set wildmode=list:longest
@@ -77,8 +72,7 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('ekalinin/Dockerfile.vim', {'build': 'make'})
   
   call dein#add('nathanaelkane/vim-indent-guides')  
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('itchyny/lightline.vim')
   
   call dein#end()
   call dein#save_state()
@@ -91,12 +85,64 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-let g:airline_left_sep = '>'
-let g:airline_right_sep = '<'
-let g:airline_detect_modified = 1
-let g:airline_theme = 'molokai'
-let g:airline_powerline_fonts = 1
-let g:airline_symbols_ascii = 1
+let g:lightline = {
+        \ 'colorscheme': 'molokai',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightlineModified',
+        \   'readonly': 'LightlineReadonly',
+        \   'fugitive': 'LightlineFugitive',
+        \   'filename': 'LightlineFilename',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filetype': 'LightlineFiletype',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'mode': 'LightlineMode'
+        \ }
+        \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 if dein#check_install()
     call dein#install()
