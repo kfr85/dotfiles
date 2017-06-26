@@ -77,6 +77,8 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('ekalinin/Dockerfile.vim', {'build': 'make'})
   
   call dein#add('nathanaelkane/vim-indent-guides')  
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
   
   call dein#end()
   call dein#save_state()
