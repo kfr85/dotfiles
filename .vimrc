@@ -63,6 +63,7 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('Shougo/neosnippet')
 
   call dein#add('tomasr/molokai')
+  call dein#add('nanotech/jellybeans.vim')
   
   call dein#add('editorconfig/editorconfig-vim')
   
