@@ -74,7 +74,7 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('fatih/vim-go')
   call dein#add('ekalinin/Dockerfile.vim', {'build': 'make'})
   
-  call dein#add('nathanaelkane/vim-indent-guides')  
+  call dein#add('Yggdroot/indentLine')  
   
   call dein#add('itchyny/lightline.vim')
   call dein#add('tpope/vim-fugitive')
@@ -88,8 +88,6 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 let g:lightline = {
         \ 'colorscheme': 'molokai',
         \ 'mode_map': {'c': 'NORMAL'},
