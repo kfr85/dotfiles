@@ -90,7 +90,7 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_enable_auto_cd = 1
 let g:indentLine_setColors = 0
 let g:lightline = {
-        \ 'colorscheme': 'molokai',
+        \ 'colorscheme': 'jellybeans',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
@@ -154,7 +154,7 @@ endif
 
 "colorscheme
 set t_Co=256
-colorscheme molokai
+colorscheme jellybeans
 syntax on
 
 
