@@ -25,7 +25,7 @@ set expandtab
 set autoindent
 set tabstop=2
 set shiftwidth=2
-set list listchars=tab:\▸\-
+set list listchars=tab:\¦\
 
 "searches
 set ignorecase
