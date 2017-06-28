@@ -22,6 +22,7 @@ set matchtime=3
 set wildmode=list:longest
 set virtualedit=onemore
 set expandtab
+set autoindent
 set tabstop=2
 set shiftwidth=2
 set list listchars=tab:\▸\-
