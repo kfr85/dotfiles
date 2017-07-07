@@ -79,11 +79,14 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('itchyny/lightline.vim')
   call dein#add('tpope/vim-fugitive')
   
+  call dein#add('ktvoelker/sbt-vim')
+  
   call dein#end()
   call dein#save_state()
 endif
 
 "plugin parameters
+let g:neocomplete#enable_at_startup = 1
 let g:molokai_original = 1
 let g:rehash256 = 1
 let g:vimfiler_as_default_explorer = 1
