@@ -1,7 +1,7 @@
 dotfiles
 =========
 
-## Install
+## Installation
 
 ```bash
 mkdir -p ~/git/rusagedougawa/dotfiles
