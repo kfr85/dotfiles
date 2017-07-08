@@ -4,9 +4,9 @@ colors
 
 PROMPT="
  %{${fg[yellow]}%}%~%{${reset_color}%} 
- [${OSTYPE}|%n]$ "
+ [`uname`|%n]$ "
 
- PROMPT2="[${OSTYPE}|%n]> "
+ PROMPT2="[`uname`|%n]> "
 
 bindkey -v
 
