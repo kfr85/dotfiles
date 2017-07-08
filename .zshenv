@@ -10,6 +10,9 @@ PROMPT="
 
 bindkey -v
 
+# OS依存設定を読み込む
+[ -f ${HOME}/.zsh/.zshenv_`uname` ] && . ${HOME}/.zsh/.zshenv_`uname`
+
 #履歴を保存するファイル指定
 HISTFILE="$HOME/.zsh_history"
 #履歴件数
