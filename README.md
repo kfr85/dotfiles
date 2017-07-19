@@ -3,6 +3,8 @@ dotfiles
 
 ## Installation
 
+- setup
+
 ```bash
 mkdir -p ~/git/rusagedougawa/dotfiles
 
@@ -14,6 +16,15 @@ ln -s ~/git/rusagedougawa/dotfiles/.vimrc ~/.vimrc
 ln -s ~/git/rusagedougawa/dotfiles/.editorconfig ~/.editorconfig
 
 chsh -s `which zsh` ${USER}
+```
+
+- nvim
+
+```bash
+mkdir ~/.config
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
+
 ```
 
 ## Requirements
