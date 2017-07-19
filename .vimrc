@@ -39,7 +39,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set backspace=indent,eol,start
 set mouse=a
 set whichwrap =b,s,h,l,<,>,[,]
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 
 "vimdiff
 hi DiffAdd    ctermfg=black ctermbg=2
@@ -78,8 +78,6 @@ if dein#load_state(expand('~/.vim/dein'))
   
   call dein#add('itchyny/lightline.vim')
   call dein#add('tpope/vim-fugitive')
-  
-  call dein#add('ktvoelker/sbt-vim')
   
   call dein#end()
   call dein#save_state()
