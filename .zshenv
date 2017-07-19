@@ -35,6 +35,9 @@ export LSCOLORS=GxFxCxDxfxegedabagaced
 
 alias la='ls -a --color'
 alias ll='ls -l --color'
+if [ -e `which nvim` ]; then
+  alias vim="`which nvim`"
+fi
 alias vf='vim -c VimFilerExplorer'
 
 if [ ! -d ~/.vim/dein/repos/github.com/Shougo/dein.vim ]
