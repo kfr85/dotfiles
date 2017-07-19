@@ -33,8 +33,10 @@ export PATH=$PATH:$GOROOT/bin
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxfxegedabagaced
 
-alias la='ls -a --color'
-alias ll='ls -l --color'
+alias ls='ls --color'
+alias la='ls -a'
+alias ll='ls -l'
+alias grep='grep --color'
 if [ -e `which nvim` ]; then
   alias vim="`which nvim`"
 fi
