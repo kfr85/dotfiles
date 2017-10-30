@@ -24,7 +24,7 @@ hook_post_update = '''
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim
+repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
