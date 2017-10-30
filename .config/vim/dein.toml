@@ -1,4 +1,4 @@
-[plugins]]
+[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -14,23 +14,23 @@ hook_post_update = '''
 repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
-repo = tomasr/molokai'
+repo = 'tomasr/molokai'
 hook_post_update = '''
   let g:molokai_original = 1
   let g:rehash256 = 1
 '''
 
 [[plugins]]
-repo = nanotech/jellybeans.vim'
+repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
-repo = editorconfig/editorconfig-vim
+repo = 'editorconfig/editorconfig-vim
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
-repo = Shougo/vimfiler.vim'
+repo = 'Shougo/vimfiler.vim'
 depends = ['Shougo/unite.vim']
 hook_post_update = '''
   let g:vimfiler_as_default_explorer = 1
