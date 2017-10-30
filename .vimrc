@@ -52,10 +52,10 @@ if &compatible
   set nocompatible
 endif
 
-# dein.vimインストール時に指定したディレクトリをセット
+" dein.vimインストール時に指定したディレクトリをセット
 let s:dein_dir = expand('~/.cache/dein')
 
-# dein.vimの実体があるディレクトリをセット
+" dein.vimの実体があるディレクトリをセット
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " dein.vimが存在していない場合はgithubからclone
@@ -69,13 +69,13 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  # dein.toml, dein_layz.tomlファイルのディレクトリをセット
+  " dein.toml, dein_layz.tomlファイルのディレクトリをセット
   let s:toml_dir = expand('~/.config/vim')
 
-  # 起動時に読み込むプラグイン群
+  " 起動時に読み込むプラグイン群
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
 
-  # 遅延読み込みしたいプラグイン群
+  " 遅延読み込みしたいプラグイン群
   call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
 
   call dein#end()
