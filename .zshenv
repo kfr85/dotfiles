@@ -37,9 +37,7 @@ alias ls='ls --color'
 alias la='ls -a'
 alias ll='ls -l'
 alias grep='grep --color'
-if type nvim > /dev/null 2>&1 ; then
-  alias vim="`which nvim`"
-fi
+
 alias vf='vim -c VimFilerExplorer'
 
 if [ ! -d ~/.config/vim ]
