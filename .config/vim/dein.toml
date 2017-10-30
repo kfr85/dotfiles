@@ -109,7 +109,7 @@ hook_post_update = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
   
-"plugin parameters
+
 
 
 
