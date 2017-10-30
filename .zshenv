@@ -42,6 +42,11 @@ if type nvim > /dev/null 2>&1 ; then
 fi
 alias vf='vim -c VimFilerExplorer'
 
+if [ ! -d ~/.config/vim ]
+then
+    mkdir -p ~/.config/vim
+fi
+
 if [ ! -d ~/.vim/dein/repos/github.com/Shougo/dein.vim ]
 then
     mkdir ~/.vim/dein/repos/github.com/Shougo/dein.vim
