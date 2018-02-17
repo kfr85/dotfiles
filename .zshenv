@@ -29,9 +29,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-export PYENV_ROOT="$HOME/.pyenv"'
-export PATH="$PYENV_ROOT/bin:$PATH"'
-eval "$(pyenv init -)"' 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 #color
 export CLICOLOR=1
