@@ -63,15 +63,12 @@ hook_post_update = '''
         \   'mode': 'LightlineMode'
         \ }
         \ }
-
   function! LightlineModified()
     return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
   endfunction
-
   function! LightlineReadonly()
     return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
   endfunction
-
   function! LightlineFilename()
     return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
@@ -80,7 +77,6 @@ hook_post_update = '''
         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
   endfunction
-
   function! LightlineFugitive()
     if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
     return fugitive#head()
@@ -88,19 +84,15 @@ hook_post_update = '''
       return ''
     endif
   endfunction
-
   function! LightlineFileformat()
     return winwidth(0) > 70 ? &fileformat : ''
   endfunction
-
   function! LightlineFiletype()
     return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
   endfunction
-
   function! LightlineFileencoding()
     return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
   endfunction
-
   function! LightlineMode()
     return winwidth(0) > 60 ? lightline#mode() : ''
   endfunction
@@ -109,8 +101,6 @@ hook_post_update = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
   
-
-
 
 
 
