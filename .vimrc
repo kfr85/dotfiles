@@ -39,7 +39,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set backspace=indent,eol,start
 set mouse=a
 set whichwrap =b,s,h,l,<,>,[,]
-set clipboard=unnamedplus
+set clipboard+=unnamed
 
 "vimdiff
 hi DiffAdd    ctermfg=black ctermbg=2
