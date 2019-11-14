@@ -86,9 +86,9 @@ if dein#check_install()
     call dein#install()
 endif
 
-if dein#check_update()
-    call dein#update()
-endif
+"if dein#check_update()
+"    call dein#update()
+"endif
 
 "colorscheme
 set t_Co=256
