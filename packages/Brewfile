@@ -1,0 +1,123 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew autoconf
+brew aws-shell
+brew bats
+brew bdw-gc
+brew brotli
+brew c-ares
+brew cheat
+brew colordiff
+brew coreutils
+brew curl
+brew curl-openssl
+brew direnv
+brew fish
+brew fluent-bit
+brew fontconfig
+brew forego
+brew freetype
+brew gd
+brew gdbm
+brew gettext
+brew gibo
+brew git
+brew git-flow
+brew git-secrets
+brew glide
+brew gnu-sed
+brew go
+brew gox
+brew graphviz
+brew httpstat
+brew icu4c
+brew ipython
+brew jansson
+brew jemalloc
+brew jpeg
+brew jq
+brew libev
+brew libevent
+brew libidn
+brew libidn2
+brew libmetalink
+brew libpng
+brew libssh2
+brew libtiff
+brew libtool
+brew libunistring
+brew libyaml
+brew lsd
+brew lua
+brew mas
+brew mecab
+brew mysql@5.7
+brew ncurses
+brew nghttp2
+brew nkf
+brew node
+brew oniguruma
+brew openldap
+brew openssl@1.1
+brew packer
+brew pcre
+brew pcre2
+brew peco
+brew perl
+brew pkg-config
+brew pyenv
+brew python
+brew python@2
+brew rbenv
+brew readline
+brew redis
+brew rtmpdump
+brew ruby
+brew ruby-build
+brew sqlite
+brew swig
+brew terminal-notifier
+brew terraform
+brew terraformer
+brew tig
+brew tree
+brew vim
+brew w3m
+brew webp
+brew wget
+brew xz
+brew yarn
+brew zeromq
+brew zsh
+
+tap homebrew/cask-fonts
+cask font-hack-nerd-font
+
+tap homebrew/services
+
+tap homebrew/cask
+cask iterm2
+cask pycharm-ce
+
+tap aws/tap
+
+tap fumiyas/echo-sd
+brew echo-sd
+
+tap keith/formulae
+brew reminders-cli
+
+tap rcmdnk/file
+brew brew-file
+
+# Other Cask applications
+cask font-hackgen
+cask keepingyouawake
+
+# App Store applications
+appstore 405843582 Alfred (1.2)
+appstore 1024640650 CotEditor (3.4.2)
+appstore 425955336 Skitch (2.8.2)
+appstore 425424353 The Unarchiver (4.0.0)
