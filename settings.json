@@ -9,7 +9,7 @@
     "bug, workbench.action.debug.start, Launch debug"
   ],
   "workbench.colorTheme": "One Monokai",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "editor.formatOnSave": true,
@@ -22,4 +22,7 @@
   "editor.fontFamily": "HackGen",
   "workbench.iconTheme": "material-icon-theme",
   "highlightActiveIndentGuide": "true",
+  "vsicons.dontShowNewVersionMessage": true,
+  "python.dataScience.jupyterServerURI": "http://localhost:8888/?token=rusagedougawa",
+  "editor.renderControlCharacters": true
 }

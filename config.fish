@@ -14,6 +14,7 @@ alias vd='vimdiff'
 alias vaffle='vim +Vaffle'
 alias res='curl -LI $1 -o /dev/null -w "%{http_code}\n" -s'
 alias tn='terminal-notifier -message '
+alias psh='python -c $1'
 
 # editor
 set -x EDITOR vim
@@ -24,7 +25,7 @@ set PATH $HOME/.rbenv/bin $PATH
 
 # python
 set PYENV_ROOT $HOME/.pyenv
-set PATH $PYENV_ROOT/bin:$PATH
+set PATH $PYENV_ROOT/bin $PATH
 
 # node
 set PATH $HOME/.nodebrew/current/bin $PATH
@@ -35,7 +36,11 @@ set PATH $HOME/.cargo/bin $PATH
 # go
 set GOPATH $HOME/dev
 set GOROOT /usr/local/opt/go/libexec
-set PATH $PATH:$GOPATH/bin $GOROOT/bin
+set PATH $PATH $GOROOT/bin
+set PATH $PATH $GOPATH/bin
+
+# bazel
+set PATH $PATH $HOME/bin
 
 # init
 eval (pyenv init - | source)
