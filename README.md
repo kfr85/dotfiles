@@ -6,28 +6,18 @@ dotfiles
 - setup
 
 ```bash
-mkdir -p ~/git/rusagedougawa/dotfiles
+mkdir -p ~/dev/src/github.com/rusagedougawa/dotfiles
 
-git clone https://github.com/rusagedougawa/dotfiles ~/git/rusagedougawa/dotfiles
+git clone https://github.com/rusagedougawa/dotfiles ~/dev/src/github.com/rusagedougawa/dotfiles
 
-ln -s ~/git/rusagedougawa/dotfiles/.zshenv ~/.zshenv
-ln -s ~/git/rusagedougawa/dotfiles/.zsh.d ~/.zsh.d
-ln -s ~/git/rusagedougawa/dotfiles/.vimrc ~/.vimrc
-ln -s ~/git/rusagedougawa/dotfiles/.editorconfig ~/.editorconfig
+ln -s ~/dev/src/github.com/rusagedougawa/dotfiles/.vimrc ~/.vimrc
 
-chsh -s `which zsh` ${USER}
-```
+ln -s ~/dev/src/github.com/rusagedougawa/dotfiles/.tigrc ~/.tigrc
 
-- nvim
+ln -s ~/dev/src/github.com/rusagedougawa/dotfiles/.editorconfig ~/.editorconfig
 
-```bash
-mkdir ~/.config
-ln -s ~/.vim ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvim/init.vim
+ln -s ~/dev/src/github.com/rusagedougawa/dotfiles/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+ln -s ~/dev/src/github.com/rusagedougawa/dotfiles/config.fish ~/.config/fish/config.fish
 
 ```
-
-## Requirements
-- git
-- zsh
-- vim

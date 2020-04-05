@@ -1,0 +1,64 @@
+# main viewの左端にコミットIDを表示する
+set main-view = id date author commit-title:graph=yes,refs=yes
+
+# 画面を垂直方向に分割する
+set vertical-split = yes
+
+# 水平分割したウィンドウの下画面サイズを % で指定（行数指定も可）
+set split-view-height = 80%
+
+# 差分の前後の表示行数（diff-context)を指定
+set diff-context = 6
+
+set pager-view = line-number:yes,interval=10 text
+
+#set show-line-numbers = yes
+#set line-number-interval = 10
+
+# See: http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+# See: http://jonas.nitro.dk/tig/tigrc.5.html
+#
+# Area                  Foreground      Background         Options
+# ==============================================================================
+
+# Main UI
+# ==============================================================================
+color default           250             234
+color 'Author '         15              default
+color 'Commit: '        242             default
+color 'Merge: '         45              default
+color id                167             default
+color date              242             default
+color graph-commit      161             default
+color status            15              default
+color delimiter         90              default
+color cursor            234             7
+
+# Help Page
+# ==============================================================================
+color help-group        161             default
+
+# Current Line
+# ==============================================================================
+color main-tracked      105             default             bold
+
+# Current Line
+# ==============================================================================
+color cursor            234             7
+
+# Bottom Statusbar
+# ==============================================================================
+color title-focus       234             250
+color title-blur        234             250
+
+# File Diffs
+# ==============================================================================
+color diff-stat         45              default
+color diff-index        14              default
+color diff-add          40              default
+color diff-del          161             default
+color diff-chunk        190             default
+
+bind main    R !git rebase -i %(commit)
+bind diff    R !git rebase -i %(commit)
+

@@ -1,0 +1,28 @@
+{
+  "files.autoGuessEncoding": true,
+  "explorer.confirmDragAndDrop": false,
+  "shortcuts.buttons": [
+    "file-binary , workbench.action.tasks.build , Run build task",
+    "beaker , workbench.action.tasks.test , Run test task",
+    "terminal , workbench.action.terminal.toggleTerminal , Toggle terminal panel",
+    "telescope , workbench.action.showCommands , Show command palette",
+    "bug, workbench.action.debug.start, Launch debug"
+  ],
+  "workbench.colorTheme": "One Monokai",
+  "window.zoomLevel": 1,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "editor.formatOnSave": true,
+  "git.enableSmartCommit": true,
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.fontFamily": "HackGen Console for Powerline",
+  "editor.fontFamily": "HackGen",
+  "workbench.iconTheme": "material-icon-theme",
+  "highlightActiveIndentGuide": "true",
+  "vsicons.dontShowNewVersionMessage": true,
+  "python.dataScience.jupyterServerURI": "http://localhost:8888/?token=rusagedougawa",
+  "editor.renderControlCharacters": true
+}

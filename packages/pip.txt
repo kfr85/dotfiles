@@ -1,0 +1,28 @@
+asn1crypto==0.24.0
+atlassian-python-api==1.14.1
+beautifulsoup4==4.6.3
+certifi==2019.3.9
+cffi==1.12.3
+cfn-flip==1.2.1
+chardet==3.0.4
+Click==7.0
+cryptography==2.7
+defusedxml==0.6.0
+idna==2.8
+jedi==0.13.1
+jira==2.0.0
+mecab-python3==0.996.2
+oauthlib==3.0.1
+parso==0.3.1
+pbr==5.2.1
+pycparser==2.19
+PyJWT==1.7.1
+PyYAML==5.1.1
+requests==2.22.0
+requests-oauthlib==1.2.0
+requests-toolbelt==0.9.1
+six==1.12.0
+troposphere==2.4.7
+# Editable install with no version control (UNKNOWN==0.0.0)
+-e /Users/01025955/dev/src/pushbullet
+urllib3==1.25.3

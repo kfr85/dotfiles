@@ -1,2 +1,106 @@
 [[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+hook_post_update = '''
+  let g:neocomplete#enable_at_startup = 1 
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
 repo = 'tomasr/molokai'
+hook_post_update = '''
+  let g:molokai_original = 1
+  let g:rehash256 = 1
+'''
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = ['Shougo/unite.vim']
+hook_post_update = '''
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_enable_auto_cd = 1
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_post_update = '''
+  let g:indentLine_setColors = 0
+'''
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_post_update = '''
+  let g:lightline = {
+        \ 'colorscheme': 'molokai',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightlineModified',
+        \   'readonly': 'LightlineReadonly',
+        \   'fugitive': 'LightlineFugitive',
+        \   'filename': 'LightlineFilename',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filetype': 'LightlineFiletype',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'mode': 'LightlineMode'
+        \ }
+        \ }
+  function! LightlineModified()
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  endfunction
+  function! LightlineReadonly()
+    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+  endfunction
+  function! LightlineFilename()
+    return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+  endfunction
+  function! LightlineFugitive()
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+    else
+      return ''
+    endif
+  endfunction
+  function! LightlineFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+  endfunction
+  function! LightlineFiletype()
+    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  endfunction
+  function! LightlineFileencoding()
+    return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+  endfunction
+  function! LightlineMode()
+    return winwidth(0) > 60 ? lightline#mode() : ''
+  endfunction
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+  
+
+
+
