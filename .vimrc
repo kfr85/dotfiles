@@ -93,6 +93,7 @@ if dein#load_state('~/.cache/dein')
   " colorscheme 
   call dein#add('tomasr/molokai')
   call dein#add('nanotech/jellybeans.vim')
+  call dein#add('dracula/vim')
 
   " vim visual
   call dein#add('itchyny/lightline.vim')
@@ -123,9 +124,10 @@ endif
 
 " syntax
 filetype plugin indent on
-autocmd ColorScheme * highlight Comment term=reverse ctermfg=193 ctermbg=16
+"autocmd ColorScheme * highlight Comment term=reverse ctermfg=193 ctermbg=16
 "colorscheme molokai
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme dracula
 syntax enable
 
 " vim-go
