@@ -34,10 +34,6 @@ set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set showcmd
 
-" syntax
-filetype plugin indent on
-syntax enable
-
 "searches
 set ignorecase
 set smartcase
@@ -96,3 +92,6 @@ if dein#check_install()
   call dein#install()
 endif
 
+" syntax
+filetype plugin indent on
+syntax enable
