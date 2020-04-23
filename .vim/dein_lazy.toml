@@ -1,3 +1,35 @@
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+hook_post_source = '''
+  autocmd FileType go nmap <Space>gr <Plug>(go-run)
+  autocmd FileType go nmap <Space>gb <Plug>(go-build)
+  autocmd FileType go nmap <Space>gt <Plug>(go-test)
+  autocmd FileType go nmap <Space>gc <Plug>(go-coverage)
+  autocmd FileType go nmap <Space>gd <Plug>(go-doc)
+  autocmd FileType go nmap <Space>gi <Plug>(go-import)
+  autocmd FileType go nmap <Space>gm <Plug>(go-implements)
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_build_constraints = 1
+'''
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+on_ft = ['python']
+hook_post_source = '''
+  let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pep8']
+'''
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+on_ft = ['dockerfile']

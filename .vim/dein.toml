@@ -1,4 +1,96 @@
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_post_source = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_post_source = '''
+  let g:startify_skiplist = [
+      \ '.cache/.*', 
+      \ ]
+  let g:startify_bookmarks = [ 
+      \ '~/.vimrc', 
+      \ '~/.aws/credentials', 
+      \ '~/.aws/config' 
+      \ ]
+  let g:startify_lists = [
+      \ { 'header': ['   Bookmarks'],      'type': 'bookmarks' },
+      \ { 'header': ['   MRU'],            'type': 'files' },
+      \ { 'header': ['   MRU '. getcwd()], 'type': 'dir' },
+      \ { 'header': ['   Sessions'],       'type': 'sessions' },
+      \ ]
+'''
+
+[[plugins]]
+repo = 'dracula/vim'
+hook_post_source = '''
+  colorscheme dracula
+'''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_post_source = '''
+  let g:gitgutter_sign_added = '+'
+  let g:gitgutter_sign_modified = '->'
+  let g:gitgutter_sign_removed = '-'
+
+  function! MyGitGutter()
+    if ! exists('*GitGutterGetHunkSummary')
+        \ || ! get(g:, 'gitgutter_enabled', 0)
+        \ || winwidth('.') <= 90
+      return '---'
+    endif
+    let symbols = [
+        \ g:gitgutter_sign_added . ' ',
+        \ g:gitgutter_sign_modified . ' ',
+        \ g:gitgutter_sign_removed . ' '
+        \ ]
+    let hunks = GitGutterGetHunkSummary()
+    let ret = []
+    for i in [0, 1, 2]
+      if hunks[i] > 0
+        call add(ret, symbols[i] . hunks[i])
+      endif
+    endfor
+    return join(ret, ' ')
+  endfunction
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_post_source = '''
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  map <C-n> :NERDTreeToggle<CR>
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -6,7 +98,7 @@ repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
-hook_post_update = '''
+hook_post_source = '''
   let g:neocomplete#enable_at_startup = 1 
 '''
 
@@ -14,93 +106,52 @@ hook_post_update = '''
 repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
-repo = 'tomasr/molokai'
-hook_post_update = '''
-  let g:molokai_original = 1
-  let g:rehash256 = 1
-'''
-
-[[plugins]]
-repo = 'nanotech/jellybeans.vim'
-
-[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = ['Shougo/unite.vim']
-hook_post_update = '''
+hook_post_source = '''
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_enable_auto_cd = 1
 '''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-hook_post_update = '''
+hook_post_source = '''
   let g:indentLine_setColors = 0
 '''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_post_update = '''
+depends = ['vim-gitgutter', 'dracula']
+hook_add = '''
+  set noshowmode
   let g:lightline = {
-        \ 'colorscheme': 'molokai',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ }
-        \ }
-  function! LightlineModified()
-    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-  endfunction
-  function! LightlineReadonly()
-    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
-  endfunction
-  function! LightlineFilename()
-    return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
-  endfunction
-  function! LightlineFugitive()
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return fugitive#head()
-    else
-      return ''
-    endif
-  endfunction
-  function! LightlineFileformat()
-    return winwidth(0) > 70 ? &fileformat : ''
-  endfunction
-  function! LightlineFiletype()
-    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-  endfunction
-  function! LightlineFileencoding()
-    return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-  endfunction
-  function! LightlineMode()
-    return winwidth(0) > 60 ? lightline#mode() : ''
-  endfunction
+      \ 'colorscheme': 'dracula',
+      \ 'mode_map': {'c': 'NORMAL'},
+      \ 'active': {
+      \   'left': [
+      \     ['mode', 'paste'],
+      \     ['gitgutter', 'filename'],
+      \   ],
+      \   'right': [
+      \     ['lineinfo', 'syntastic'],
+      \     ['percent'],
+      \     ['charcode', 'fileformat', 'fileencoding', 'filetype'],
+      \   ]
+      \ },
+      \ 'component_function': {
+      \   'gitgutter': 'MyGitGutter',
+      \ },
+      \}
 '''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-  
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
 
 
 
