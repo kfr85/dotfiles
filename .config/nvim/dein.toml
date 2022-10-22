@@ -1,36 +1,8 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_post_source = '''
-  let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-#hook_post_source = '''
-#  let g:neosnippet#enable_snipmate_compatibility = 1
-#  let g:neosnippet#snippets_directory = '~/.vim/snippets/'
-#'''
-
-[[plugins]]
-repo = 'Shougo/neocomplcache'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'Shougo/defx.nvim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'cocopon/vaffle.vim'
 
 [[plugins]]
 repo = 'mhinz/vim-startify'
@@ -53,7 +25,7 @@ hook_post_source = '''
 
 [[plugins]]
 repo = 'dracula/vim'
-hook_post_source = '''
+hook_add = '''
   colorscheme dracula
 '''
 
@@ -90,14 +62,6 @@ hook_post_source = '''
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_post_source = '''
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-  map <C-n> :NERDTreeToggle<CR>
-'''
-
-[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
@@ -105,12 +69,6 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-hook_post_source = '''
-  let g:neocomplete#enable_at_startup = 1 
-'''
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
@@ -151,5 +109,23 @@ hook_add = '''
       \}
 '''
 
+# LSP (Language Server Protocol)
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
 
+# LSP settings
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+hook_add = '''
+imap <C-l>     <Plug>(neosnippet_expand_or_jump)
+smap <C-l>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-l>     <Plug>(neosnippet_expand_target)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 

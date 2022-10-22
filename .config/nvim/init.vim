@@ -53,10 +53,6 @@ set mouse=a
 set whichwrap =b,s,h,l,<,>,[,]
 set clipboard+=unnamedplus
 
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
 " vimdiff
 hi DiffAdd    ctermfg=black ctermbg=2
 hi DiffChange ctermfg=black ctermbg=3

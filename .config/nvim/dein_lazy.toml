@@ -1,4 +1,43 @@
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'ddc-nvim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+on_event = 'InsertEnter'
+depends = ['depends.vim', 'ddc-around', 'ddc-matcher_head']
+hook_add = '''
+  call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
+  call ddc#custom#patch_global('sourceOptions', {
+    \ '_': {
+    \   'matchers': ['matcher_head'],
+    \   'sorters': ['sorter_rank'],
+    \   'around': {'mark':'A'}
+    \   'nvim-lsp': {
+    \   'mark': 'L',
+    \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+    \   }
+    \ }})
+  call ddc#enable()
+'''
+
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_post_source = '''
